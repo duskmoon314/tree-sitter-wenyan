@@ -1,0 +1,58 @@
+==========
+問天地好在
+==========
+
+吾有一言。曰「「問天地好在。」」。書之。
+
+---
+
+(program
+  (statement
+    (declare_statement
+      (INT_NUM
+        (INT_NUM_KEYWORDS))
+      (TYPE)
+      (data
+        (STRING_LITERAL))))
+  (statement
+    (print_statement)))
+
+==========
+問天地好在+
+==========
+
+吾有一數。曰三。名之曰「甲」。
+為是「甲」遍。
+	吾有一言。曰「「問天地好在。」」。書之。
+云云。
+
+---
+
+(program
+  (statement
+    (define_statement
+      (declare_statement
+        (INT_NUM
+          (INT_NUM_KEYWORDS))
+        (TYPE)
+        (data
+          (INT_NUM
+            (INT_NUM_KEYWORDS))))
+        (name_multi_statement
+          (IDENTIFIER))))
+  (statement
+    (for_statement
+      (for_enum_statement
+        (FOR_START_ENUM)
+        (IDENTIFIER)
+        (FOR_MID_ENUM)
+        (statement
+          (declare_statement
+            (INT_NUM
+              (INT_NUM_KEYWORDS))
+              (TYPE)
+              (data
+                (STRING_LITERAL))))
+        (statement
+          (print_statement))
+        (FOR_IF_END)))))

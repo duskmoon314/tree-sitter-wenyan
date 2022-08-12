@@ -1,0 +1,1775 @@
+{
+  "name": "wenyan",
+  "word": "IDENTIFIER",
+  "rules": {
+    "program": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "statement"
+      }
+    },
+    "statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "declare_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "define_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "print_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "if_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "math_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assign_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "import_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "object_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "reference_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "array_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "flush_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "BREAK"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        }
+      ]
+    },
+    "reference_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "夫"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "data"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "之"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "STRING_LITERAL"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "INT_NUM"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "其餘"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "IDENTIFIER"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "長"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_single_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "array_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "array_cat_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "array_push_statement"
+        }
+      ]
+    },
+    "array_cat_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "銜"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "PREPOSITION_RIGHT"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "IDENTIFIER"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_single_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "array_push_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "充"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "PREPOSITION_RIGHT"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "data"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_single_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "function_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function_define_statement"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "function_call_statement"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "name_single_statement"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "function_call_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function_pre_call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_post_call"
+        }
+      ]
+    },
+    "function_pre_call": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "施"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "preposition"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "data"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "施其"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "preposition"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "data"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "function_post_call": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "取"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "INT_NUM"
+            },
+            {
+              "type": "STRING",
+              "value": "以施"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            }
+          ]
+        }
+      }
+    },
+    "function_define_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "吾有"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "INT_NUM"
+        },
+        {
+          "type": "STRING",
+          "value": "術"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name_single_statement"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "欲行是術"
+                },
+                {
+                  "type": "STRING",
+                  "value": "必先得"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "INT_NUM"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "TYPE"
+                      },
+                      {
+                        "type": "REPEAT1",
+                        "content": {
+                          "type": "SEQ",
+                          "members": [
+                            {
+                              "type": "STRING",
+                              "value": "曰"
+                            },
+                            {
+                              "type": "SYMBOL",
+                              "name": "IDENTIFIER"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "是術曰"
+            },
+            {
+              "type": "STRING",
+              "value": "乃行是術曰"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "是謂"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "STRING",
+          "value": "之術也"
+        }
+      ]
+    },
+    "if_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "IF"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "if_expression"
+        },
+        {
+          "type": "STRING",
+          "value": "者"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "ELSE"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "statement"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_IF_END"
+        }
+      ]
+    },
+    "if_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "unary_if_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_if_expression"
+        }
+      ]
+    },
+    "unary_if_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "data"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "STRING",
+              "value": "之"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "長"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "STRING_LITERAL"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "IDENTIFIER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "其"
+        }
+      ]
+    },
+    "binary_if_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "unary_if_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IF_LOGIC_OP"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unary_if_expression"
+        }
+      ]
+    },
+    "declare_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "吾有"
+            },
+            {
+              "type": "STRING",
+              "value": "今有"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "INT_NUM"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "TYPE"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "曰"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "data"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "define_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "declare_statement"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "name_multi_statement"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "init_define_statement"
+        }
+      ]
+    },
+    "name_multi_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "名之"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "曰"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "IDENTIFIER"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "name_single_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "名之"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "曰"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            }
+          ]
+        }
+      ]
+    },
+    "init_define_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "有"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "TYPE"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "data"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_single_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "for_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "for_arr_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_enum_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_while_statement"
+        }
+      ]
+    },
+    "for_arr_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "FOR_START_ARR"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_MID_ARR"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_IF_END"
+        }
+      ]
+    },
+    "for_enum_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "FOR_START_ENUM"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "INT_NUM"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_MID_ENUM"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_IF_END"
+        }
+      ]
+    },
+    "for_while_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "FOR_START_WHILE"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FOR_IF_END"
+        }
+      ]
+    },
+    "math_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "arith_math_statement"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "boolean_algebra_statement"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mod_math_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_multi_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "arith_math_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "arith_binary_math"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "arith_unary_math"
+        }
+      ]
+    },
+    "arith_binary_math": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ARITH_BINARY_OP"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "data"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "preposition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "data"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        }
+      ]
+    },
+    "arith_unary_math": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "UNARY_OP"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        }
+      ]
+    },
+    "mod_math_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "除"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "INT_NUM"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "FLOAT_NUM"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            },
+            {
+              "type": "STRING",
+              "value": "其"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "preposition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "INT_NUM"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "FLOAT_NUM"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "IDENTIFIER"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "POST_MOD_MATH_OP"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "boolean_algebra_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "夫"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "LOGIC_BINARY_OP"
+        }
+      ]
+    },
+    "assign_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "昔之"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "之"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "INT_NUM"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "STRING_LITERAL"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "IDENTIFIER"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "者"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "今"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "data"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "之"
+                                },
+                                {
+                                  "type": "SYMBOL",
+                                  "name": "INT_NUM"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BLANK"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "其"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": "是矣"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "今不復存矣"
+            }
+          ]
+        }
+      ]
+    },
+    "return_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "乃得"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "data"
+                },
+                {
+                  "type": "STRING",
+                  "value": "其"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "乃歸空無"
+            },
+            {
+              "type": "STRING",
+              "value": "乃得矣"
+            }
+          ]
+        }
+      ]
+    },
+    "import_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "吾嘗觀"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "STRING_LITERAL"
+        },
+        {
+          "type": "STRING",
+          "value": "之書"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "方悟"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "IDENTIFIER"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": "之義"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "object_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "吾有"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "INT_NUM"
+        },
+        {
+          "type": "STRING",
+          "value": "物"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name_multi_statement"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "object_define_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "object_define_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "其物如是"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "物之"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "STRING_LITERAL"
+              },
+              {
+                "type": "STRING",
+                "value": "者"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "TYPE"
+              },
+              {
+                "type": "STRING",
+                "value": "曰"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "data"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "是謂"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "STRING",
+          "value": "之物也"
+        }
+      ]
+    },
+    "data": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "STRING_LITERAL"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "BOOL_VALUE"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "IDENTIFIER"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "INT_NUM"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "FLOAT_NUM"
+        }
+      ]
+    },
+    "STRING_LITERAL": {
+      "type": "PATTERN",
+      "value": "「「[^」]*」」"
+    },
+    "IDENTIFIER": {
+      "type": "PATTERN",
+      "value": "「[^」]+」"
+    },
+    "ARITH_BINARY_OP": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "加"
+        },
+        {
+          "type": "STRING",
+          "value": "減"
+        },
+        {
+          "type": "STRING",
+          "value": "乘"
+        }
+      ]
+    },
+    "LOGIC_BINARY_OP": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "中有陽乎"
+        },
+        {
+          "type": "STRING",
+          "value": "中無陰乎"
+        }
+      ]
+    },
+    "POST_MOD_MATH_OP": {
+      "type": "STRING",
+      "value": "所餘幾何"
+    },
+    "UNARY_OP": {
+      "type": "STRING",
+      "value": "變"
+    },
+    "preposition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "PREPOSITION_LEFT"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "PREPOSITION_RIGHT"
+        }
+      ]
+    },
+    "PREPOSITION_LEFT": {
+      "type": "STRING",
+      "value": "於"
+    },
+    "PREPOSITION_RIGHT": {
+      "type": "STRING",
+      "value": "以"
+    },
+    "IF": {
+      "type": "STRING",
+      "value": "若"
+    },
+    "ELSE": {
+      "type": "STRING",
+      "value": "若非"
+    },
+    "IF_LOGIC_OP": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "等於"
+        },
+        {
+          "type": "STRING",
+          "value": "不等於"
+        },
+        {
+          "type": "STRING",
+          "value": "不大於"
+        },
+        {
+          "type": "STRING",
+          "value": "不小於"
+        },
+        {
+          "type": "STRING",
+          "value": "大於"
+        },
+        {
+          "type": "STRING",
+          "value": "小於"
+        }
+      ]
+    },
+    "FOR_START_ARR": {
+      "type": "STRING",
+      "value": "凡"
+    },
+    "FOR_START_ENUM": {
+      "type": "STRING",
+      "value": "為是"
+    },
+    "FOR_START_WHILE": {
+      "type": "STRING",
+      "value": "恆為是"
+    },
+    "FOR_MID_ARR": {
+      "type": "STRING",
+      "value": "中之"
+    },
+    "FOR_MID_ENUM": {
+      "type": "STRING",
+      "value": "遍"
+    },
+    "FOR_IF_END": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "云云"
+        },
+        {
+          "type": "STRING",
+          "value": "也"
+        }
+      ]
+    },
+    "FLOAT_NUM": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "INT_NUM"
+        },
+        {
+          "type": "STRING",
+          "value": "又"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "INT_NUM"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "FLOAT_NUM_KEYWORDS"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FLOAT_NUM_KEYWORDS": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "分"
+        },
+        {
+          "type": "STRING",
+          "value": "釐"
+        },
+        {
+          "type": "STRING",
+          "value": "毫"
+        },
+        {
+          "type": "STRING",
+          "value": "絲"
+        },
+        {
+          "type": "STRING",
+          "value": "忽"
+        },
+        {
+          "type": "STRING",
+          "value": "微"
+        },
+        {
+          "type": "STRING",
+          "value": "塵"
+        },
+        {
+          "type": "STRING",
+          "value": "埃"
+        },
+        {
+          "type": "STRING",
+          "value": "渺"
+        },
+        {
+          "type": "STRING",
+          "value": "漠"
+        }
+      ]
+    },
+    "INT_NUM": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "INT_NUM_KEYWORDS"
+      }
+    },
+    "INT_NUM_KEYWORDS": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "零"
+        },
+        {
+          "type": "STRING",
+          "value": "一"
+        },
+        {
+          "type": "STRING",
+          "value": "二"
+        },
+        {
+          "type": "STRING",
+          "value": "三"
+        },
+        {
+          "type": "STRING",
+          "value": "四"
+        },
+        {
+          "type": "STRING",
+          "value": "五"
+        },
+        {
+          "type": "STRING",
+          "value": "六"
+        },
+        {
+          "type": "STRING",
+          "value": "七"
+        },
+        {
+          "type": "STRING",
+          "value": "八"
+        },
+        {
+          "type": "STRING",
+          "value": "九"
+        },
+        {
+          "type": "STRING",
+          "value": "十"
+        },
+        {
+          "type": "STRING",
+          "value": "百"
+        },
+        {
+          "type": "STRING",
+          "value": "千"
+        },
+        {
+          "type": "STRING",
+          "value": "萬"
+        },
+        {
+          "type": "STRING",
+          "value": "億"
+        },
+        {
+          "type": "STRING",
+          "value": "兆"
+        },
+        {
+          "type": "STRING",
+          "value": "京"
+        },
+        {
+          "type": "STRING",
+          "value": "垓"
+        },
+        {
+          "type": "STRING",
+          "value": "秭"
+        },
+        {
+          "type": "STRING",
+          "value": "穣"
+        },
+        {
+          "type": "STRING",
+          "value": "溝"
+        },
+        {
+          "type": "STRING",
+          "value": "澗"
+        },
+        {
+          "type": "STRING",
+          "value": "正"
+        },
+        {
+          "type": "STRING",
+          "value": "載"
+        },
+        {
+          "type": "STRING",
+          "value": "極"
+        }
+      ]
+    },
+    "TYPE": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "數"
+        },
+        {
+          "type": "STRING",
+          "value": "列"
+        },
+        {
+          "type": "STRING",
+          "value": "言"
+        },
+        {
+          "type": "STRING",
+          "value": "爻"
+        }
+      ]
+    },
+    "BOOL_VALUE": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "陰"
+        },
+        {
+          "type": "STRING",
+          "value": "陽"
+        }
+      ]
+    },
+    "print_statement": {
+      "type": "STRING",
+      "value": "書之"
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "注曰"
+            },
+            {
+              "type": "STRING",
+              "value": "疏曰"
+            },
+            {
+              "type": "STRING",
+              "value": "批曰"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "STRING_LITERAL"
+        }
+      ]
+    },
+    "flush_statement": {
+      "type": "STRING",
+      "value": "噫"
+    },
+    "BREAK": {
+      "type": "STRING",
+      "value": "乃止"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "([ \\t\\r\\n]|。|、)+"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+
